@@ -14,6 +14,7 @@ namespace LuxaforService
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .UseWindowsService()
                 .ConfigureServices((hostContext, services) =>
                 {
                     services.AddHttpClient<LuxaforClient>(client => client.BaseAddress = new Uri("https://api.luxafor.com"));
